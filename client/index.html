@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connect 4</title>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+
+<body>
+    <main>
+        <div class="rps-wrapper">
+            <div id="div-score"><span id="name-p0"></span><span id="score"> 0 - 0 </span><span id="name-p1"></span>
+            </div>
+            <ul id="events">
+
+            </ul>
+            <div class="button-wrapper">
+                <form id='chat-form'>
+                    <input id="chat">
+                    <button id="say">say</button>
+                </form>
+            </div>
+        </div>
+        <div class="connect4-container">
+            <div class="connect4-grid">
+                <div class="col" id="col0">
+                    <!--pour suppr les id quand jai fini col[0-9]*-r[0-9]-->
+                    <div class="case" id="col0-r0"> col0-r0</div>
+                    <div class="case" id="col0-r1"> col0-r1</div>
+                    <div class="case" id="col0-r2"> col0-r2</div>
+                    <div class="case" id="col0-r3"> col0-r3</div>
+                    <div class="case" id="col0-r4"> col0-r4</div>
+                    <div class="case" id="col0-r5"> col0-r5</div>
+                </div>
+                <div class="col" id="col1">
+                    <div class="case" id="col1-r0"> col1-r0</div>
+                    <div class="case" id="col1-r1"> col1-r1</div>
+                    <div class="case" id="col1-r2"> col1-r2</div>
+                    <div class="case" id="col1-r3"> col1-r3</div>
+                    <div class="case" id="col1-r4"> col1-r4</div>
+                    <div class="case" id="col1-r5"> col1-r5</div>
+                </div>
+                <div class="col" id="col2">
+                    <div class="case" id="col2-r0"> col2-r0</div>
+                    <div class="case" id="col2-r1"> col2-r1</div>
+                    <div class="case" id="col2-r2"> col2-r2</div>
+                    <div class="case" id="col2-r3"> col2-r3</div>
+                    <div class="case" id="col2-r4"> col2-r4</div>
+                    <div class="case" id="col2-r5"> col2-r5</div>
+                </div>
+                <div class="col" id="col3">
+                    <div class="case" id="col3-r0"> col3-r0</div>
+                    <div class="case" id="col3-r1"> col3-r1</div>
+                    <div class="case" id="col3-r2"> col3-r2</div>
+                    <div class="case" id="col3-r3"> col3-r3</div>
+                    <div class="case" id="col3-r4"> col3-r4</div>
+                    <div class="case" id="col3-r5"> col3-r5</div>
+                </div>
+                <div class="col" id="col4">
+                    <div class="case" id="col4-r0"> col4-r0</div>
+                    <div class="case" id="col4-r1"> col4-r1</div>
+                    <div class="case" id="col4-r2"> col4-r2</div>
+                    <div class="case" id="col4-r3"> col4-r3</div>
+                    <div class="case" id="col4-r4"> col4-r4</div>
+                    <div class="case" id="col4-r5"> col4-r5</div>
+                </div>
+                <div class="col" id="col5">
+                    <div class="case" id="col5-r0"> col5-r0</div>
+                    <div class="case" id="col5-r1"> col5-r1</div>
+                    <div class="case" id="col5-r2"> col5-r2</div>
+                    <div class="case" id="col5-r3"> col5-r3</div>
+                    <div class="case" id="col5-r4"> col5-r4</div>
+                    <div class="case" id="col5-r5"> col5-r5</div>
+                </div>
+                <div class="col" id="col6">
+                    <div class="case" id="col6-r0"> col6-r0</div>
+                    <div class="case" id="col6-r1"> col6-r1</div>
+                    <div class="case" id="col6-r2"> col6-r2</div>
+                    <div class="case" id="col6-r3"> col6-r3</div>
+                    <div class="case" id="col6-r4"> col6-r4</div>
+                    <div class="case" id="col6-r5"> col6-r5</div>
+                </div>
+
+            </div>
+            
+        </div>
+
+        <div id="myModal" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+                <form id='name-form'>
+                    <label for="name">What's your name ?</label>
+                    <input type="text" id="name">
+                    <button id="submitName">Play</button>
+                </form>
+            </div>
+        </div>
+        <div id="endModal" class="modal">
+
+            <!-- Modal content -->
+            <div class="modal-content">
+<p id='end-text'></p>
+<p id='end-waiting'>Waiting for your opponent decision...</p>
+                    <button id="rematch">Rematch</button>
+                    <button id="new-game">New Game</button>
+            </div>
+        </div>
+
+    </main>
+
+</body>
+<script src="/socket.io/socket.io.js"></script>
+<script src="src/client.js"></script>
+
+</html>
